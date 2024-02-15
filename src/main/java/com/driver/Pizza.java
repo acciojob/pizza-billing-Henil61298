@@ -49,7 +49,6 @@ public class Pizza {
         if (!extraCheeseAddedd) {
             price += 80;
             extraCheeseAddedd = true;
-            bill += "Extra Cheese Added: 80\n";
         }
     }
 
@@ -58,10 +57,10 @@ public class Pizza {
         if (!extraToppingsAdded) {
             if (!isVeg) {
                 price += 120;
-                bill += "Extra Toppings Added: 120\n";
+//                bill += "Extra Toppings Added: 120\n";
             } else {
                 price += 70;
-                bill += "Extra Toppings Added: 70\n";
+//                bill += "Extra Toppings Added: 70\n";
             }
             extraToppingsAdded = true;
         }
@@ -71,13 +70,28 @@ public class Pizza {
         // your code goes here
         if (!paperBagAdded) {
             price += 20;
-            bill += "Paperbag Added: 20\n";
+//            bill += "Paperbag Added: 20\n";
             paperBagAdded = true;
         }
     }
 
     public String getBill(){
         // your code goes here
+        if (extraCheeseAddedd){
+            bill += "Extra Cheese Added: 80\n";
+        }
+
+        if (extraToppingsAdded && isVeg){
+            bill += "Extra Toppings Added: " + 70 + "\n";
+        }
+
+        if (extraToppingsAdded && !isVeg){
+            bill += "Extra Toppings Added: " + 120 + "\n";
+        }
+
+        if (paperBagAdded){
+            bill += "Paperbag Added: 20\n";
+        }
         if (!isBillGenerated) {
             bill += "Total Price: " + price + "\n";
             isBillGenerated = true;
