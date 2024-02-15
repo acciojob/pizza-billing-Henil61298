@@ -10,6 +10,8 @@ public class Pizza {
 
     private boolean paperBagAdded = false;
 
+    private boolean extraToppingsAdded = false;
+
 //    Veg pizza base price = 300
 //    Non-veg pizza base price = 400
 ////    Extra Cheese Price = 80
@@ -50,12 +52,14 @@ public class Pizza {
 
     public void addExtraToppings(){
         // your code goes here
-        if (!isVeg){
-            price += 120;
-            bill += "Extra Toppings Added: 120\n";
-        }else {
-            price += 70;
-            bill += "Extra Toppings Added: 70\n";
+        if (!extraToppingsAdded) {
+            if (!isVeg) {
+                price += 120;
+                bill += "Extra Toppings Added: 120\n";
+            } else {
+                price += 70;
+                bill += "Extra Toppings Added: 70\n";
+            }
         }
     }
 
