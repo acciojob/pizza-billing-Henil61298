@@ -68,11 +68,13 @@ public class Pizza {
         if (!paperBagAdded) {
             price += 20;
             bill += "Paperbag Added: 20\n";
+            paperBagAdded = true;
         }
     }
 
     public String getBill(){
         // your code goes here
+        bill += "Total Price: " + price + "\n";
         return this.bill;
     }
 }
