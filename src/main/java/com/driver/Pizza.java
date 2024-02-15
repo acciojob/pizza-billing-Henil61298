@@ -6,13 +6,13 @@ public class Pizza {
     private Boolean isVeg;
     private String bill;
 
-    private boolean isBillGenerated = false;
+    boolean isBillGenerated;
 
-    private boolean extraCheeseAddedd = false;
+    boolean extraCheeseAddedd;
 
-    private boolean paperBagAdded = false;
+    boolean paperBagAdded;
 
-    private boolean extraToppingsAdded = false;
+    boolean extraToppingsAdded;
 
 //    Veg pizza base price = 300
 //    Non-veg pizza base price = 400
@@ -30,6 +30,10 @@ public class Pizza {
     public Pizza(Boolean isVeg){
         this.isVeg = isVeg;
         // your code goes here
+        isBillGenerated = false;
+        extraCheeseAddedd = false;
+        paperBagAdded = false;
+        extraToppingsAdded  = false;
         if (isVeg){
             price = 300;
             bill = "Base Price Of The Pizza: " + 300 + "\n";
