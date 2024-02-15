@@ -36,6 +36,7 @@ public class Pizza {
         }else {
             price = 400;
             bill = "Base Price Of The Pizza: " + 400 + "\n";
+            this.isVeg = false;
         }
     }
 
